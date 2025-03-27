@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(8, 8, 31);
+            color: aliceblue;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin: 10px;
+            position: sticky; /* Make the header sticky */
+            top: 0; /* Position it at the top of the page */
+            z-index: 1000; /* Ensure it's on top of other content */
+            background-color: rgb(8, 8, 31); /* Ensure the background is visible */
+        }
+        header{
+            top: 0%;
+            margin: 0
+            ;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        /* Coin 1 Section Styling */
+        div.coin1 {
+            margin: 22px;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .coin1 .image1 {
+            flex: 0 0 300px;
+            padding: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid white;
+        }
+
+        .coin1 .image1 img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .coin1 .context1 {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .coin1 .context1 p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .coin1 .context1 p b {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        /* Coin 2 Section Styling */
+        div.coin2 {
+            margin: 22px;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .coin2 .image2 {
+            flex: 0 0 350px;
+            padding: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid white;
+        }
+
+        .coin2 .image2 img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .coin2 .context2 {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .coin2 .context2 p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .coin2 .context2 p:nth-child(1), .coin2 .context2 p:nth-child(3) {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .sticker {
+            display: inline-block;
+            background-color: #FF6347;
+            padding: 8px 15px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button1, .button2 {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .button1 button, .button2 button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button1 button:hover, .button2 button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Coin 3 Layout */
+        .coin3 {
+            margin: 22px;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Centering content */
+            flex-direction: row;
+            align-items: center;
+            gap: 30px; /* Space between the items */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Style for box1 and box2 inside coin3 */
+        .coin3 .box1, .coin3 .box2 {
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 4px solid white; /* White border */
+        }
+
+        /* Image in Coin3 */
+        .coin3 .image3 {
+            flex: 0 0 300px; /* Adjusting the image size */
+            padding: 10px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid white;
+        }
+
+        .coin3 .image3 img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .coin3 p {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: aliceblue;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Coin 4 Layout */
+        .coin4 {
+            margin: 22px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .coin4 p {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+
+        /* Contact Section Styling */
+        .coin4 .email, .coin4 .phone, .coin4 .social {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: aliceblue;
+            margin-bottom: 15px;
+        }
+
+        .coin4 .email p, .coin4 .phone p, .coin4 .social p {
+            font-size: 1.4rem;
+            font-weight: normal;
+        }
+
+        .coin4 .button {
+            margin-top: 20px;
+        }
+
+        .coin4 .button button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .coin4 .button button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Hussain</p>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Coin 1 Section -->
+        <div class="coin1">
+            <div class="image1">
+                <img src="WhatsApp Image 2025-03-16 at 9.45.35 AM.jpeg" alt="Hussain's Image">
+            </div>
+            <div class="context1">
+                <p>Hi There, I am</p>
+                <p><b>Hussain Patanwala</b></p>
+                <p>Myself Hussain Patanwala, a First Year Engineering Student in IT Branch. I am a Web Developer, Video Editor, and AI learner and Graphic Designer.</p>
+                <div class="button1">
+                    <button>Contact Me</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coin 2 Section -->
+        <div class="coin2">
+            <div class="context2">
+                <span class="sticker">About Me</span>
+                <p>Hello, My name is Hussain, and I am a Web Developer, Video Editor, Graphic Designer, and AI Learner. Currently, I am studying in the first year of Engineering in the IT Branch From PVG College of Engineering and Technology.</p>
+                <span class="sticker">Technologies and Skills</span>
+                <p>Technologies I am proficient in:</p>
+                <div class="button2">
+                    <button>HTML</button>
+                    <button>CSS</button>
+                    <button>C++</button>
+                    <button>PYTHON</button>
+                    <button>COREL DRAW</button>
+                    <button>CAPCUT</button>
+                    <button>ADOBE PHOTOSHOP</button>
+                    <button>CANVA</button>
+                    <button>FIGMA</button>
+                    <button>SNAPSEED</button>
+                </div>
+                <div style="margin-top: 20px;">
+                    <span class="sticker">Academics Achievements</span>
+                    <p>1. Got 97.60%ile in MHT-CET 2024</p>
+                    <p>2. Got 80.24%ile in JEE Mains 2024</p>
+                    <p>3. Got a SGPA of 8.45 in Sem 1 </p>
+                    <p>4. Got 80.60% in 12th BOARD</p>
+                    <p>5. Got 90% in 10 BOARD</p>
+                </div>
+            </div>
+            <div class="image2">
+                <img src="WhatsApp Image 2025-03-16 at 11.34.18 AM.jpeg" alt="Technology Image">
+            </div>
+        </div>
+
+        <!-- Coin 3 Section -->
+        <div class="coin3">
+            <p>MY WORK</p>
+            <!-- Box 1 and Box 2 placed horizontally -->
+            <div class="box1">
+                CODE PVG : Member
+                I am a member of the Code PVG club, and there we do next-level things and share knowledge with others for the past 4 months.
+            </div>
+            <div class="box2">
+                Samasara 2024 Media Team: Member
+                I am a member of the media team and contributed by clicking pictures and Editing videos for social media pages.
+            </div>
+            <!-- Image 3 placed in front of Box 1 and Box 2 -->
+            <div class="image3">
+                <img src="WhatsApp Image 2025-03-16 at 12.11.05 PM.jpeg" alt="">
+            </div>
+        </div>
+
+        <!-- Coin 4 Section -->
+        <div class="coin4">
+            <p>CONTACT ME</p>
+            <div class="email">
+                <p>Email</p>
+                <p>lolmemes52@gmail.com</p>
+            </div>
+            <div class="phone">
+                <p>Phone</p>
+                <p>+91-7822089785</p>
+            </div>
+            <div class="social">
+                <p>Instagram</p>
+                <p>hussainn_53</p>
+            </div>
+            <div class="button">
+                <button>Contact Now</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
